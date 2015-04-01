@@ -178,7 +178,7 @@ class AppThwackApi(RequestsMixin):
         if not name:
             name = os.path.basename(root) + ext
         with open(path, 'r') as fileobj:
-            data = self.post('file', data=dict(name=name), files=dict(file=fileobj)).json
+            data = self.post('file', data=dict(name=name), files=dict(file=fileobj)).json()
             return AppThwackFile(**data)
 
 
